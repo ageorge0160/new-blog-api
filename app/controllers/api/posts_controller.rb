@@ -1,7 +1,7 @@
 class Api::PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :destroy]
      def index
-       @posts = Post.all
+       @posts = Post.all.reverse()
        render json: @posts
      end
 
@@ -40,6 +40,6 @@ class Api::PostsController < ApplicationController
      end
 
      def post_params
-       params.require(:post).permit(:title, :content, :created_by)
+       params.require(:post).permit(:title, :content, :likes)
      end
    end
