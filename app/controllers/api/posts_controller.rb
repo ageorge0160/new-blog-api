@@ -1,5 +1,5 @@
 class Api::PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :destroy]
+  before_action :set_post, only: [:show, :edit, :destroy, :update]
      def index
        @posts = Post.all.reverse()
        render json: @posts
